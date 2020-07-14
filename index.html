@@ -28,10 +28,10 @@
                 <h5>We only have 5 tables! Book your seat before they all are gone!</h5>
                 <br>
                 <button type="button" class="btn btn-lg btn-primary search-btn"><span
-                        class="glyphicon glyphicon-list-alt"></span>
+                        class="glyphicon glyphicon-list-alt"></span><a href="./tables"></a>
                     View Tables</button>
                 <button type="button" class="btn btn-lg btn-danger"><span
-                        class="glyphicon glyphicon-credit-card"></span><a href ="./reserve.html">Make Reservation</a></button>
+                        class="glyphicon glyphicon-credit-card"></span><a href="./reserve">Make Reservation</a></button>
             </div>
             <div class="card-body">
                 <!-- Reservation Context -->
@@ -60,19 +60,22 @@
     </div>
 
     <script>
-        $(function () {
-            var nua = navigator.userAgent
-            var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf(
-                'AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
-            if (isAndroid) {
-                $('select.form-control').removeClass('form-control').css('width', '100%')
-            }
-        })
+        $(document).ready(function () {
+            $(function () {
+                var nua = navigator.userAgent
+                var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua
+                    .indexOf(
+                        'AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
+                if (isAndroid) {
+                    $('select.form-control').removeClass('form-control').css('width', '100%')
+                }
+            })
 
-        $(".search-btn").on("click", function () {
-            event.preventDefault();
-            app.get("/api/tables", function (req, res) {
-                return res.json(tables);
+            $(".search-btn").on("click", function () {
+                event.preventDefault();
+                app.get("/api/tables", function (req, res) {
+                    return res.json(tables);
+                });
             });
         });
     </script>
@@ -85,6 +88,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+    <script type='text/javascript' src='./index.js'></script>
 
 </body>
 

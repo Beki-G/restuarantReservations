@@ -1,12 +1,15 @@
 // Dependencies
 // =============================================================
-var express = require("express");
-var path = require("path");
+const express = require("express");
+const path = require("path");
+const jQuery = require('jQuery')
+const popper = require('popper')
+const bootstrap = require('bootstrap')
 
 // Sets up the Express App
 // =============================================================
-var app = express();
-var PORT = process.env.PORT || 3000;
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({
@@ -18,8 +21,8 @@ app.use(express.json());
 
 const filledTables = [{
     customerName: "jim bob",
-    customerEmail: "jimbob@example.com",
     phoneNumber: 5038675309,
+    customerEmail: "jimbob@example.com",
     customerID: "jimbob4ever"
 }];
 
@@ -27,18 +30,18 @@ const filledTables = [{
 
 const waitingList = [{
     customerName: "bill bob",
-    customerEmail: "billbob@example.com",
     phoneNumber: 5038675308,
+    customerEmail: "billbob@example.com",
     customerID: "billbob4ever"
 }]
 
 // On start go to index
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "/index.html"));
 });
 
 app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"));
+    res.sendFile(path.join(__dirname, "/reserve.html"));
 });
 
 // Returns all tables
@@ -46,19 +49,13 @@ app.get("/api/tables", function (req, res) {
     return res.json(tables);
 });
 
-// if no tables available sends info to wait list
-app.get("/api/characters/:character", function (req, res) {
-    var chosen = req.params.character;
-
-    console.log(chosen);
-
-    for (var i = 0; i < characters.length; i++) {
-        if (chosen === characters[i].routeName) {
-            return res.json(characters[i]);
-        }
+// Returns all tables
+app.get("/api/tables", function (req, res) {
+    for (var i = 5; i < filledTables.length; i++) {
+        filledTables.push(newTable)
     }
 
-    return res.json(false);
+    waitingList.push(newTable)
 });
 
 
