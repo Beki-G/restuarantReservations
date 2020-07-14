@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Boostrap Source Link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- My CSS-->
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+    <title>Reserve</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Card-->
+        <div class="card">
+            <div class="card-header">
+                <h1>Hot Restaurant</h1>
+                <hr>
+
+                <h5>We only have 5 tables! Book your seat before they all are gone!</h5>
+                <br>
+
+            </div>
+            <div class="card-body">
+                <!-- Reservation Context -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h2>Make a Reservation</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="userName">Name</label>
+                                    <input type= "text" class= "form-control" id="userName" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="userPhone">Phone Number</label>
+                                    <input type= "text" class= "form-control" id="userPhone" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="userEmail">Email</label>
+                                    <input type= "email" class= "form-control" id="userEmail">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userID">Unique ID</label>
+                                    <input type= "text" class= "form-control" id="userID">
+                                </div>
+                                <button type="button" class="btn btn-lg btn-danger"><span
+                                    class="glyphicon glyphicon-credit-card"></span> Submit</button
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Context -->
+            </div>
+        </div>
+        <!-- Ending card-->
+    </div>
+</body>
+</html>
