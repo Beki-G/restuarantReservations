@@ -3,8 +3,8 @@
 const express = require("express");
 const path = require("path");
 const jQuery = require('jQuery')
-const popper = require('popper')
-const bootstrap = require('bootstrap')
+// const popper = require('popper')
+// const bootstrap = require('bootstrap')
 
 // Sets up the Express App
 // =============================================================
@@ -49,7 +49,7 @@ app.get("/api/tables", function (req, res) {
     return res.json(tables);
 });
 
-// Returns all tables
+// push newTable info to filledTable or waitingListArray
 app.get("/api/tables", function (req, res) {
     for (var i = 5; i < filledTables.length; i++) {
         filledTables.push(newTable)

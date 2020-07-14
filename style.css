@@ -42,8 +42,9 @@ a:hover{
     padding-bottom: 2.5rem;   
 }
 
+
 /* EAMB FOOTER */
-.card-footer {
-    text-align: right;
-    background-color: #f5f5f5;
+#footer {
+    display: inline;
+    text-align: center;
 }

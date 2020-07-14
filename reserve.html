@@ -12,7 +12,9 @@
     <!-- My CSS-->
     <link rel="stylesheet" type="text/css" href="./style.css">
 
-    <title>Reserve</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <title>Reserve Your Table</title>
 </head>
 
 <body>
@@ -20,7 +22,7 @@
         <!-- Card-->
         <div class="card">
             <div class="card-header">
-                <h1>Hot Restaurant</h1>
+                <h1><img src="fire-icon.png" height="40px">FlameOn Grill</h1>
                 <hr>
 
                 <h5>We only have 5 tables! Book your seat before they all are gone!</h5>
@@ -55,40 +57,52 @@
                             </form>
                         </div>
                     </div>
-                </div> <!-- End Context -->
-            </div>
-        </div>
-        <!-- Ending card-->
-    </div>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".submit-btn").on("click", function (event) {
-                event.preventDefault();
-                console.log('lol')
-                var newTable = {
-                    name: $("#customerName").val().trim(),
-                    email: $("#customerEmail").val().trim(),
-                    phone: $("#phoneNumber").val().trim(),
-                    ID: $("#customerID").val().trim()
-                };
+                    <!-- Ending card-->
+                </div>
+                <!-- Footer -->
+                <div id="page-container">
+                    <div id="content-wrap">
+                        <div id="footer">
+                            <p>
+                                <h6><a href="#" id="apiTable">API Table Link</a> | <a href="#" id="apiWL">API Wait
+                                        List</a></h6>
+                            </p>
+                            Copyright &copy 2020 - TEAM EAMB
+                        </div>
+                    </div>
+                </div>
 
-                $.post("/api/tables", newTable)
-                    .then(function (data) {
-                        console.log("reserve.html", data);
-                        alert("Adding table...");
-                    });
-            });
-        });
-    </script>
-    <script type='text/javascript' src='./index.js'></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft 2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $(".submit-btn").on("click", function (event) {
+                                event.preventDefault();
+                                console.log('lol')
+                                var newTable = {
+                                    name: $("#customerName").val().trim(),
+                                    email: $("#customerEmail").val().trim(),
+                                    phone: $("#phoneNumber").val().trim(),
+                                    ID: $("#customerID").val().trim()
+                                };
+                            });
+
+                            $.post("/api/tables", newTable)
+                            .then(function (data) {
+                                console.log("reserve.html", data);
+                                alert("Adding table...");
+                            });
+                        });
+                </script>
+                <script type='text/javascript' src='./index.js'></script>
+                <script src="https://code.jquery.com/jquery-3.5.1.js"
+                    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+                <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                    integrity="sha384-Q6E9RHvbIyZFJoft 2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                    crossorigin="anonymous">
+                </script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                    crossorigin="anonymous">
+                </script> -->
 </body>
 
 </html>

@@ -1,0 +1,26 @@
+{
+  "name": "restuarantreservations",
+  "version": "1.0.0",
+  "description": "restaurant res API",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "popper": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Beki-G/restuarantReservations.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Beki-G/restuarantReservations/issues"
+  },
+  "homepage": "https://github.com/Beki-G/restuarantReservations#readme"
+}
