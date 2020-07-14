@@ -12,7 +12,7 @@
     <!-- My CSS-->
     <link rel="stylesheet" type="text/css" href="./style.css">
 
-    <title>Reserve</title>
+    <title>Reserve Your Table</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
         <!-- Card-->
         <div class="card">
             <div class="card-header">
-                <h1>Hot Restaurant</h1>
+                <h1><img src="fire-icon.png" height="40px">Hot Restaurant</h1>
                 <hr>
 
                 <h5>We only have 5 tables! Book your seat before they all are gone!</h5>
@@ -55,8 +55,21 @@
                                     </div> </div> <!-- End Context -->
                         </div>
                     </div>
-                    <!-- Ending card-->
-                </div>
+        <!-- Ending card-->
+    </div>
+            <!-- Footer -->
+    <div id="page-container">
+        <div id="content-wrap">
+            <div id="footer">
+                <p>
+                    <h6><a href="#" id="apiTable">API Table Link</a> | <a href="#" id="apiWL">API Wait List</a></h6>
+                </p>
+                Copyright &copy 2020 - TEAM EAMB
+            </div>
+        </div>
+    </div>
+
+
                 <script>
                     $(".submit-btn").on("click", function (event) {
                         event.preventDefault();
