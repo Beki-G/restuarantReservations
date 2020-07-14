@@ -27,7 +27,8 @@
 
                 <h5>We only have 5 tables! Book your seat before they all are gone!</h5>
                 <br>
-                <button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span>
+                <button type="button" class="btn btn-lg btn-primary search-btn"><span
+                        class="glyphicon glyphicon-list-alt"></span>
                     View Tables</button>
                 <button type="button" class="btn btn-lg btn-danger"><span
                         class="glyphicon glyphicon-credit-card"></span> Make Reservation</button>
@@ -61,21 +62,29 @@
     <script>
         $(function () {
             var nua = navigator.userAgent
-            var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
+            var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf(
+                'AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
             if (isAndroid) {
                 $('select.form-control').removeClass('form-control').css('width', '100%')
             }
         })
+
+        $(".search-btn").on("click", function () {
+            event.preventDefault();
+            app.get("/api/tables", function (req, res) {
+                return res.json(tables);
+            });
+        });
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 
 </body>
 
